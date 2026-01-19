@@ -24,11 +24,11 @@ Risks:
 
 Return JSON only:
 
-{
+{{
   "overall_strength": "weak | moderate | strong",
   "why_this_could_work": [],
   "why_this_might_fail": [],
   "biggest_unknown": "",
   "next_30_day_validation_plan": []
-}
+}}
 """
