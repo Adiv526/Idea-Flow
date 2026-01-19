@@ -1,7 +1,7 @@
 from langchain import LLMChain
-from models.llm import get_llm
-from prompts.risk import risk_prompt
-from utils.parser import parse_json
+from llm import get_llm
+from risk import risk_prompt
+from parser import parse_json
 from langchain.prompts import PromptTemplate
 
 def run_risk_chain(idea):
