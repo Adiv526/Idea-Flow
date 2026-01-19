@@ -1,8 +1,6 @@
-from langchain import LLMChain
-from llm import get_llm
+from llm import call_llm
 from risk import risk_prompt
 from parser import parse_json
-from langchain.prompts import PromptTemplate
 
 def run_summary_chain(idea, problem, customer, market, solution, risk):
     prompt = PromptTemplate(
@@ -13,7 +11,7 @@ def run_summary_chain(idea, problem, customer, market, solution, risk):
         template=summary_prompt()
     )
 
-    chain = LLMChain(llm=get_llm(), prompt=prompt)
+   
     response = chain.invoke({
     "idea": idea,
     "problem": problem,
@@ -22,5 +20,5 @@ def run_summary_chain(idea, problem, customer, market, solution, risk):
     "solution": solution,
     "risk": risk
 })
-    return parse_json(response["text"])
+    return parse_json(response)
 
