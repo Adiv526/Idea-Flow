@@ -5,12 +5,8 @@ def parse_json(text: str):
     try:
         match = re.search(r"\{.*\}", text, re.S)
         if not match:
-            return {"error": "No JSON found"}
+            return {"error": "No JSON found", "raw": text}
 
-        json_str = match.group()
-        return json.loads(json_str)
+        return json.loads(match.group())
     except Exception as e:
-        return {
-            "error": "JSON parsing failed",
-            "raw_output": text
-        }
+        return {"error": "JSON parse failed", "raw": text}
