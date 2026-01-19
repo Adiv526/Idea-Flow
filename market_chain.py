@@ -1,7 +1,7 @@
 from langchain import LLMChain
-from models.llm import get_llm
-from prompts.market import market_prompt
-from utils.parser import parse_json
+from llm import get_llm
+from market import market_prompt
+from parser import parse_json
 from langchain.prompts import PromptTemplate
 
 def run_market_chain(idea):
