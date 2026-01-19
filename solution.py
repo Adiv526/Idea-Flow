@@ -1,5 +1,5 @@
 def solution_prompt():
-    return """
+    return f"""
 Evaluate the proposed solution approach:
 
 {idea}
