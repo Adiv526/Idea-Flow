@@ -14,6 +14,11 @@ idea = st.text_area("Describe your startup idea")
 if st.button("Validate") and idea.strip():
 
     with st.spinner("Analyzing your idea like a VC..."):
+        prompt = full_validation_prompt(idea)
+        response = call_llm(prompt)
+        result = parse_json(response)
+
+        """
         problem = run_problem_chain(idea)
         customer = run_customer_chain(idea)
         market = run_market_chain(idea)
@@ -21,13 +26,13 @@ if st.button("Validate") and idea.strip():
         risk = run_risk_chain(idea)
         summary = run_summary_chain(
             idea, problem, customer, market, solution, risk
-        )
+        )"""
 
     st.tabs(["Problem","Customer","Market","Solution","Risks","Summary"])
 
-    st.json(problem)
-    st.json(customer)
-    st.json(market)
-    st.json(solution)
-    st.json(risk)
-    st.json(summary)
+    st.json(result["problem"])
+    st.json(result["customer"])
+    st.json(result["market"])
+    st.json(result["solution"])
+    st.json(result["risk"])
+    st.json(result["summary"])
