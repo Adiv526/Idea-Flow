@@ -1,5 +1,5 @@
 def risk_prompt():
-    return """
+    return f"""
 Identify the biggest risks for this startup idea:
 
 {idea}
