@@ -1,5 +1,5 @@
 def market_prompt():
-    return """
+    return f"""
 Evaluate the market sanity for this startup idea:
 
 {idea}
