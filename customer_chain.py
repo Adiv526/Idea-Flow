@@ -11,6 +11,5 @@ def run_customer_chain(idea):
     )
 
     chain = LLMChain(llm=get_llm(), prompt=prompt)
-    result = chain.run(idea=idea)
-
-    return parse_json(result)
+    response = chain.invoke({"idea": idea})
+    return parse_json(response["text"])
