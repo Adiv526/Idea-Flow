@@ -1,5 +1,5 @@
 def customer_prompt():
-    return """
+    return f"""
 Identify the strongest early adopter for this startup idea:
 
 {idea}
