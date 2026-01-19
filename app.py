@@ -7,8 +7,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 import streamlit as st
 
 from chains.problem_chain import run_problem_chain
-from chains.customer_chain import run_customer_chain
-from chains.market_chain import run_market_chain
+from customer_chain import run_customer_chain
+from market_chain import run_market_chain
 from chains.solution_chain import run_solution_chain
 from chains.risk_chain import run_risk_chain
 from chains.summary_chain import run_summary_chain
