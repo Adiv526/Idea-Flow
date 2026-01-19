@@ -1,10 +1,15 @@
-from langchain_community.llms import HuggingFaceEndpoint
+from openai import OpenAI
 import os
 
-def get_llm():
-    return HuggingFaceEndpoint(
-        repo_id="mistralai/Mistral-7B-Instruct-v0.2",
-        temperature=0.3,
-        max_new_tokens=600,
-        huggingfacehub_api_token=os.environ.get("HUGGINGFACEHUB_API_TOKEN"),
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+def call_llm(prompt: str) -> str:
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[
+            {"role": "system", "content": "You are a startup analyst trained by top VCs."},
+            {"role": "user", "content": prompt}
+        ],
+        temperature=0.3
     )
+    return response.choices[0].message.content
