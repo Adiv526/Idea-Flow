@@ -1,5 +1,5 @@
 from llm import call_llm
-from problem_prompt import problem_prompt
+from problem import problem_prompt
 from parser import parse_json
 
 def run_problem_chain(idea):
