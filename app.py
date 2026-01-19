@@ -9,9 +9,9 @@ import streamlit as st
 from problem_chain import run_problem_chain
 from customer_chain import run_customer_chain
 from market_chain import run_market_chain
-from chains.solution_chain import run_solution_chain
-from chains.risk_chain import run_risk_chain
-from chains.summary_chain import run_summary_chain
+from solution_chain import run_solution_chain
+from risk_chain import run_risk_chain
+from summary_chain import run_summary_chain
 
 st.set_page_config(page_title="AI Idea Validator", layout="wide")
 
