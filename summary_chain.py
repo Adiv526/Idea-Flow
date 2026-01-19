@@ -14,13 +14,13 @@ def run_summary_chain(idea, problem, customer, market, solution, risk):
     )
 
     chain = LLMChain(llm=get_llm(), prompt=prompt)
-    result = chain.run(
-        idea=idea,
-        problem=problem,
-        customer=customer,
-        market=market,
-        solution=solution,
-        risk=risk
-    )
+    response = chain.invoke({
+    "idea": idea,
+    "problem": problem,
+    "customer": customer,
+    "market": market,
+    "solution": solution,
+    "risk": risk
+})
+    return parse_json(response["text"])
 
-    return parse_json(result)
