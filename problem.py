@@ -1,7 +1,5 @@
-def problem_prompt():
+def problem_prompt(idea):
     return f"""
-You are a startup analyst.
-
 Evaluate the PROBLEM behind this startup idea:
 
 {idea}
