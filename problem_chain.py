@@ -1,21 +1,19 @@
+from langchain.prompts import PromptTemplate
 from llm import get_llm
 from problem import problem_prompt
 from parser import parse_json
 
-from langchain.chains import LLMChain
-from langchain.prompts import PromptTemplate
 
+def run_problem_chain(idea: str):
+    llm = get_llm()
 
-def run_problem_chain(idea):
     prompt = PromptTemplate(
-        input_variables=["idea"],
-        template=problem_prompt()
+        template=problem_prompt(),
+        input_variables=["idea"]
     )
 
-    chain = LLMChain(
-        llm=get_llm(),
-        prompt=prompt
-    )
+    chain = prompt | llm
 
     response = chain.invoke({"idea": idea})
-    return parse_json(response["text"])
+
+    return parse_json(response)
