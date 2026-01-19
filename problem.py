@@ -1,5 +1,5 @@
 def problem_prompt():
-    return """
+    return f"""
 You are a startup analyst.
 
 Evaluate the PROBLEM behind this startup idea:
