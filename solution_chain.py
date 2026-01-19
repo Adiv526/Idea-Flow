@@ -1,4 +1,4 @@
-from llm import get_llm
+from llm import call_llm
 from solution import solution_prompt
 from parser import parse_json
 
