@@ -1,5 +1,5 @@
 def summary_prompt():
-    return """
+    return f"""
 You are a VC analyst.
 
 Based on the analysis below, produce a concise validation summary.
