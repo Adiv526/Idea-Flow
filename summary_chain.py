@@ -1,5 +1,5 @@
 from llm import call_llm
-from summary_prompt import summary_prompt
+from summary import summary_prompt
 from parser import parse_json
 
 def run_summary_chain(idea, problem, customer, market, solution, risk):
